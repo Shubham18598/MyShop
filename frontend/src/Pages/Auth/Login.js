@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <Layout title={"Login- Ecomm app"}>
-      <div className="form-container">
+      <div className="form-container"  style={{ minHeight: "90vh" }}>
         <form onSubmit={handleSubmit}>
           <h4 className="title">Login FORM</h4>
           <div className="mb-3">
@@ -74,7 +74,7 @@ const Login = () => {
           <div className="mb-3">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn forgot-btn"
               onClick={()=>navigate("/forgot-password")}
             >
               Forgot Password

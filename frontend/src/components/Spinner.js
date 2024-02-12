@@ -26,7 +26,7 @@ const Spinner = () => {
     >
       <h1 className="Text-center"> Redirecting to you in {count} second</h1>
       <div className="spinner-border" role="status">
-        <span className="sr-only"></span>
+        <span className="visually-hidden"> Loading...</span>
       </div>
     </div>
   );

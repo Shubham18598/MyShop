@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const UserMenu = () => {
   return (
     <>
-      <div className="text-center">
+      <div className="text-center dashboard-menu">
         <div className="list-group">
           <h4>Dashboard</h4>
           <NavLink

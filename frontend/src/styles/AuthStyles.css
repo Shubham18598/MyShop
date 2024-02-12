@@ -6,7 +6,7 @@
     flex-direction: column;
     background-color: #ffdee9;
     background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
-
+    margin-top: 60px;
 }
 
 .form-container form{
@@ -38,6 +38,24 @@
 
 .form-container form button:hover{
     border: 1px solid black;
-    background-color:  #b5fffc ;
-    color: black;
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #434343,
+      #000000
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #434343,
+      #000000
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.forgot-btn {
+    background-color: #434343a4 !important;
+    border: 0 !important;
+  }
+  
+  .forgot-btn:hover {
+    color: white !important;
+  }
