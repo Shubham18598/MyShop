@@ -8,6 +8,7 @@ import authRoutes from "./routes/authRoute.js";
 import cors from "cors"
 import categoryRoutes from "./routes/categoryRoute.js"
 import productRoutes from "./routes/productRoutes.js"
+import path from 'path'
 
 //configure env
 dotenv.config();
@@ -27,6 +28,8 @@ app.use(express.json({limit: '50mb'}));       // PayloadTooLargeError: request e
 app.use(express.urlencoded({limit: '50mb'}));
 app.use(morgan("dev"));
 
+app.use(express.static(path.join(__dirname,'../frontend/build')))
+
 //routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category",categoryRoutes)
@@ -34,12 +37,15 @@ app.use("/api/v1/product",productRoutes)
 
 //rest api
 
-app.get("/", (req, res) => {
-  res.send(
-    // { message: "Welcome to MyShop" }
-    "<h1>Welcome to MyShop</h1>"
-  );
-});
+// app.get("/", (req, res) => {
+//   res.send(
+//     // { message: "Welcome to MyShop" }
+//     "<h1>Welcome to MyShop</h1>"
+//   );
+// });
+app.use('*',function(req,res){
+  res.sendFile(path.join(__dirname,'../frontend/build/index.html'))
+})
 
 //PORT
 const PORT = process.env.PORT || 8080;
