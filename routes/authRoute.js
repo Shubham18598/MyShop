@@ -9,7 +9,10 @@ import {
   testController,
   updateProfileController,
 } from "../controllers/authController.js"
-import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js"
+import {
+  isAdmin,
+  requireSignIn,
+} from "../middlewares/authMiddleware.js"
 //router object
 
 const router = express.Router()
@@ -42,17 +45,20 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
 })
 
 //Update Profile
-router.put('/profile',requireSignIn,updateProfileController)
-
+router.put("/profile", requireSignIn, updateProfileController)
 
 //order
-router.get("/orders",requireSignIn,getOrdersController)
+router.get("/orders", requireSignIn, getOrdersController)
 
 // All Orders
-router.get("/all-orders",requireSignIn,isAdmin,getAllOrdersController)
+router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController)
 
 //Order Status Update
-router.put("/order-status/:orderId",requireSignIn,isAdmin,orderStatusController)
-
+router.put(
+  "/order-status/:orderId",
+  requireSignIn,
+  isAdmin,
+  orderStatusController
+)
 
 export default router
