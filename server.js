@@ -10,6 +10,7 @@ import categoryRoutes from "./routes/categoryRoute.js"
 import productRoutes from "./routes/productRoutes.js"
 import path, {dirname}  from "path"
 import { fileURLToPath } from "url"
+import bodyParser from "body-parser"
 
 // Get directory name using import.meta.url
 const __filename = fileURLToPath(import.meta.url);
@@ -34,6 +35,8 @@ app.use(express.urlencoded({ limit: "50mb" }))
 app.use(morgan("dev"))
 
 app.use(express.static(path.join(__dirname, "./frontend/build")))
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json());
 
 //routes
 app.use("/api/v1/auth", authRoutes)
