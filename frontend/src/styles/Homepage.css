@@ -10,6 +10,7 @@
   .home-page {
     display: flex;
     flex-wrap: wrap;
+    /* margin-top: 70px; */
   }
   .home-page .card {
     background-color: rgba(128, 128, 128, 0.097);
@@ -78,4 +79,11 @@
     color: green;
     font-weight: bold;
     font-size: 20px !important;
+  }
+
+  .home-carousel{
+    height: 420px;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
   }
